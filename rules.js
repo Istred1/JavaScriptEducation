@@ -378,3 +378,68 @@ movies["Cars"] = cars;
 // Так же мы можем получить список всех фильмов в нашем объекте при помощи:
 Object.keys(movies);
 
+//что бы вложить script в html:
+/* <script>
+    var message = "hello world"
+</script>  
+*/
+
+// if утверждение  так же как и в других языках:
+// Если значение "true" значит условие выполняеться
+if (condition) {
+    console.log("Do something");
+}
+
+// if else:
+if (condition) {
+     console.log("Do something");
+} else {
+     console.log("Do something else");
+} //если условие false = значит выполняется действие после else 
+
+//часто нам нужно соиденить последовательность из условий. Делается это таким образом :
+var lemonChiken = false;
+var beefWithBlackBean = true;
+var sweetAndSourPork = true;
+
+if (lemonChiken) {
+    console.log("Great! I'm having lemon chiken!");
+} else if (beefWithBlackBean) {
+    console.log("I'm having the beef.");
+} else if (sweetAndSourPork) {
+    console.log("OK, I'll have the pork.");
+} else {
+    console.log("Well, I guess I'll have rice then.");
+}
+// утверждение else необязательно, без него, если ни одно из условий не будет осуществленно, попросту ничего не произойдет 
+
+//циклы
+// цикл while :
+while (condition) {
+    console.log("Do something");
+    i++;
+}
+//цикл выполняется пока его условие (condition) остается правильным, то есть сохраняет значение true
+//цикл выполняется пока его условие не изменит значение на false
+//например:
+var sheepCounted = 0;
+while (sheepCounted < 10) {
+  console.log("I have counted " + sheepCounted + " sheep!");
+  sheepCounted++;
+}
+console.log("Zzzzzzzz");
+// если условие для false не наступит, цикл будет длиться бесконечно
+
+// for цикл, в котором определенный параметр меняет свое значение от начального до конечного с некоторым шагом
+// и для каждого значения этой переменной тело цикла выполняется один раз. 
+
+for (setup; condition; increment) {
+    console.log("Do something");
+}
+// setup- код который запускается перед началом цикла. В основном используеться для создания переменной, котороя будет считать кол-во
+// кругов, которые прошёл цикл.
+//condition- условие, которое проверяется перед каждым запуском тела цикла - если true - цикл выполняется , если false , то нет и
+// цикл останавливается  
+//increment - запускается после каждого выполнения кода тела цикла. В общем он используется для обновления цикличный переменный параметр.
+
+// for циклы в основном используются для того, что бы исполнить определенную операцию определенное кол-во раз.
