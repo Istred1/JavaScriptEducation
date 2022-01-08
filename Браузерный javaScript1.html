@@ -1,0 +1,21 @@
+< !DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Playing with the Dom</title>
+    </head>
+
+    <body>
+        <h1 id="main-heading">Hello world!<h1>
+
+                <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+                <script>
+                    $("#main-heading").text("My friends");
+                    var friendsList = ["Sasha", "Andre", "Vova", "Vadim", "Penis"];
+                        for (var i = 0; i < 5; i++) {
+                             var Pepiska =  friendsList[i];
+                             var Jopa = [];
+                             Jopa[i] = $("body").append("<p>" + Pepiska +" smells!" + "</p>").hide(2000).fadeIn(2000);
+                        }
+                </script>

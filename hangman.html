@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виселица</title>
+</head>
+
+<body>
+<h1>Виселица</h1>
+
+<script>
+// создаем массив из слов
+    var words = [
+            "javascript",
+            "monkey",
+            "amazing",
+            "pancake",
+            "bitcoin",
+            "soup",
+            "rust",
+            "mother",
+            "cheese",
+            "apple",
+            "building",
+            "book",
+            "challenge"
+        ];
+
+// выбираем случайное слово
+    var word = words[Math.floor(Math.random() * words.length)];
+
+// Устанавливаем массив ответов
+        var answerArray = [];
+        for (var i = 0; i < word.length; i++) {
+            answerArray[i] = "_"
+        }
+
+        var remainingLetters = word.length;
+        var livesDestroyer = remainingLetters;
+        var lives = 5;
+
+// Игровой цикл        
+        while ((remainingLetters > 0) && (lives !== 0)) {
+// Показываем игроку его прогресс
+            // Показываем состояние игры
+            alert("Lives: " + lives + "\n" + answerArray.join(" ") + "\n" + remainingLetters + " letters to go");
+
+// Получаем варианты ответа от игрока
+            var guess = prompt("Guess a letter, or click Cancel to stop playing").toLowerCase(); 
+            if (guess === null) { 
+                //Выходим из игрового цикла
+                break;
+            } else if (guess.length !== 1) {
+                alert("Please enter a single letter."); 
+            } else { 
+// Обновляем состояние игры при помощи переменного параметра guess
+                for (var j = 0; j < word.length; j++) { 
+                    // проверяем есть ли наша буква среди уже отгаданых
+                    if (answerArray[j] === guess) {
+                        alert("Sorry, this letter is already there...try again :|")
+                        break;
+                    }
+                    if (word[j] === guess) { 
+                        answerArray[j] = guess; 
+                        remainingLetters--; 
+                    }
+                }
+            }
+            //проверяем, уменьшилось ли количество букв, которые нужно отгадать и если нет, то отнимаем жизнь
+            if (remainingLetters===livesDestroyer) {
+                lives--;
+            }
+            //Обновляем доп переменную согласно кол-ву оставшихся букв
+            livesDestroyer= remainingLetters;
+            
+// Конец игрового цикла
+        }
+
+// Показываем ответ и поздравляем игрока или сообщает о поражении, так же        
+    if (lives === 0) {
+        alert("Ooooohh, noooo! Your lives are over :( The hidden word was: " + word);
+    } else if (remainigLetters === 0) {
+        alert("Yeeeeeahhh, great!!! The hidden word was: " + word);
+    } else {
+        alert("Hhhmmmm.... okay, bye.. (-_-) ");
+    }
+    
+</script>
+
+</body>
+</html>

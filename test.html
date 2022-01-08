@@ -1,0 +1,45 @@
+< !DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Playing with the Dom</title>
+    </head>
+
+    <body>
+        <h1 id="main-heading">Hello world!<h1>
+        
+            <div> OCHKO OT JOPI</div>
+
+                        <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+                            
+                        <script>
+                            $('#main-heading').fadeOut(1000)
+                            $('body').append("<h1 id='friends'>" + "" + "</h1>");
+                            $('#friends').hide(1000);
+                            $('#friends').text("My friends:");
+                            for (i=0; i<5; i++) {
+                                var Special = [];
+                                Special[i] = i*500;
+                                console.log(Special);
+                                $('#friends').fadeIn(Special[i]).fadeOut(Special[i]);
+                                }
+                            $('#friends').fadeIn(100);
+                            
+
+                            var Penis = ["Sraka", "Piska", "Jopa"];
+                             
+                            for(i=0; i<3; i++) {
+                                $("body").append("<p id=' '>" + "</p>");
+                                document.getElementById(' ').id = Penis[i]; 
+                                $("p").hide(1000);
+                                $(document.getElementById(Penis[i])).text(Penis[i]);
+                                }
+                            $("p").show(2000);
+                            
+                            $("div").hide(1000).delay(5000).fadeIn(1000);
+
+                           
+                        </script>
+    </body> 
+
+    <!-- $(document.getElementById(Penis[i])); -->
